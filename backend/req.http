@@ -1,0 +1,118 @@
+### Auth API
+
+### Register
+POST http://localhost:8000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "chay",
+  "email": "chay@gmail.com",
+  "password": "chay123",
+  "role": "admin"
+}
+
+### Login
+POST http://localhost:8000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Organizations API
+
+### Create Organization
+POST http://localhost:8000/api/orgs
+Content-Type: application/json
+
+{
+  "name": "Green Earth Foundation",
+  "description": "Environmental conservation organization"
+}
+
+### Get All Organizations
+GET http://localhost:8000/api/orgs
+
+### Get Organization by ID
+GET http://localhost:8000/api/orgs/6932e9319b5491a101841316
+
+### Get Pending Organizations
+GET http://localhost:8000/api/orgs/pending
+
+### Approve Organization
+POST http://localhost:8000/api/orgs/6932e9319b5491a101841316/approve
+
+### Projects API
+
+### Create Project
+POST http://localhost:8000/api/projects
+Content-Type: application/json
+
+{
+  "title": "Clean Water Initiative",
+  "description": "Providing clean water to rural communities",
+  "orgId": "6932e9319b5491a101841316",
+  "status": "active"
+}
+
+### Get All Projects
+GET http://localhost:8000/api/projects
+
+### Get Project by ID
+GET http://localhost:8000/api/projects/6932e8d611886926e1aae2c5
+
+### Resources API
+
+### Create Resource
+POST http://localhost:8000/api/resources
+Content-Type: application/json
+
+{
+  "type": "request",
+  "title": "Need 100 water filters",
+  "description": "Looking for water filtration systems",
+  "projectId": "6932e8d611886926e1aae2c5",
+  "status": "open"
+}
+
+### Get All Resources
+GET http://localhost:8000/api/resources
+
+### Contributions API
+
+### Create Contribution
+POST http://localhost:8000/api/contributions
+Content-Type: application/json
+
+{
+  "projectId": "6932e8d611886926e1aae2c5",
+  "resourceId": "6932ea429b5491a101841323",
+  "description": "I can provide 50 water filters"
+}
+
+### Get Contributions by Project ID
+GET http://localhost:8000/api/projects/6932e8d611886926e1aae2c5/contributions
+
+### Threads API
+
+### Create Thread
+POST http://localhost:8000/api/threads
+Content-Type: application/json
+
+{
+  "title": "Discussion about water filters",
+  "projectId": "6932e8d611886926e1aae2c5"
+}
+
+### Create Message in Thread
+POST http://localhost:8000/api/threads/6932ea999b5491a10184132b/messages
+Content-Type: application/json
+
+{
+  "content": "I have experience with water filtration systems. Let me know how I can help."
+}
+
+### Get Messages in Thread
+GET http://localhost:8000/api/threads/6932ea999b5491a10184132b/messages
+
