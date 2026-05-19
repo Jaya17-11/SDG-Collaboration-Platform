@@ -235,3 +235,11 @@ For issues and questions, please open an issue in the repository.
 
 **Note**: Make sure to change the `JWT_SECRET` in production to a strong, random string. Never commit `.env` files to version control.
 
+
+
+## Deployment 
+https://sdg-collaboration-platform-j4jt.onrender.com - backend
+https://sdg-collaboration-platform-two.vercel.app/ - frontend
+Database - mongoDB Atlas
+
+
